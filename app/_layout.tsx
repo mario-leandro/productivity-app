@@ -1,5 +1,6 @@
-import { IconSymbol } from "@/app-example/components/ui/icon-symbol";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Tabs } from "expo-router";
+import { StyleSheet } from "react-native";
 
 export default function TabLayout() {
   return (
@@ -11,30 +12,48 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="house.fill" color="#000" />
+          title: "Início",
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="home" size={size} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="tarefas"
         options={{
-          title: "Explore",
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="paperplane.fill" color="#000" />
+          title: "Tarefas",
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="list" size={size} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="profile"
+        name="temporizador"
         options={{
-          title: "Profile",
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="person.fill" color="#000" />
+          title: "Temporizador",
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="hourglass" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="diario"
+        options={{
+          title: "Diario",
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="book" size={size} color={color} />
           ),
         }}
       />
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 16,
+  },
+});

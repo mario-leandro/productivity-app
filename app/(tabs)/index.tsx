@@ -1,10 +1,14 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
   return (
     <View style={styles.container}>
-      <View>
-        <View></View>
+      <View style={styles.apresentacao}>
+        <Text style={styles.apresentacaoText}>Olá, Mario!</Text>
+      </View>
+
+      <View style={styles.content}>
+        <Text>Qual das opções vai utilizar agora?</Text>
       </View>
     </View>
   );
@@ -13,7 +17,19 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+  },
+  apresentacao: {
+    width: 100,
+    height: 60,
+    // backgroundColor: "#eee",
+  },
+  apresentacaoText: {
+    fontSize: 24,
+    padding: 10,
+  },
+  content: {
+    width: 100,
+    height: 80,
+    backgroundColor: "#ccc",
   },
 });

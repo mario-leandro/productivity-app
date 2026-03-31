@@ -1,3 +1,4 @@
+import AppHeader from "@/components/AppHeader";
 import { colors } from "@/constants/colors";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Tabs } from "expo-router";
@@ -6,7 +7,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: false,
+        header: () => <AppHeader />,
         tabBarActiveTintColor: colors.tertiary_colors.tertiary_900,
         // tabBarActiveBackgroundColor: colors.primary_colors.primary_100,
         tabBarInactiveTintColor: colors.muted,
